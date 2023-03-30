@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[6]:
+
+
+import os, shutil
+path = r"C:/Users/owner/Desktop/Courtenay Folder/"
+file_name = os.listdir(path)
+#os.makedirs(path + 'Courtenay Projects')
+
+folder_names = ['excel files', 'power bi files']
+for loop in range(0,2):
+        if not os.path.exists(path + folder_names[loop]):
+                os.makedirs(path + folder_names[loop])
+                
+for file in file_name:
+    if '.pbix' in file:
+        shutil.move(path + file, path + 'power bi files/' + file)
+    elif '.xlsx' in file:
+            shutil.move(path + file, path + 'excel files/' + file)
+
+
+# In[ ]:
+
+
+
+
